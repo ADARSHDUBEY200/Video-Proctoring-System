@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main-page {
+    height: 95vh;
+    width: 98vw;
+    margin: 1rem;
+    background-color: rgb(227, 224, 224);
+    border-radius: 5px;
+    box-shadow: 1px 1px 1rem black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Video{
+    height: 80%;
+    width: 90%;
+    border-radius: 5px;
+    background-color: grey;
+    border-radius: 2rem;
+}
+
+.Video video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+}
