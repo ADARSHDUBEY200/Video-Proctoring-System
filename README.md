@@ -1,42 +1,36 @@
-# 📹 TalkSphere – Full Stack Real-Time Video Conferencing Platform
+# 📹 Full Stack Video Proctoring System
 
-[![Website](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge\&logo=vercel)](https://full-stack-real-time-video-conferencing-5r1k.onrender.com)
+[![Website](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge\&logo=vercel)](https://video-proctoring-system-bisd.onrender.com)
 
 ---
 
 ## 🚀 Overview
 
-**TalkSphere** is a **full-stack, real-time video conferencing platform** built on **mesh topology** that enables seamless **multi-user video calls, chat, and AI-powered fun conversations**.
-
-With **WebRTC** handling peer-to-peer communication and **Socket.IO** for signaling, TalkSphere ensures **low-latency, high-quality conferencing**. The platform also features **screen sharing, camera/audio toggle, and multi-user room support**.
-
-Additionally, it integrates **Gemini API** to provide a **funny AI chatbot** alongside your meetings!
+Develop a robust Video Proctoring System using Express.js to ensure academic integrity during online assessments. This web-based application leverages video and potentially other monitoring techniques to deter cheating and verify student identity. The system's core function is to provide a secure and reliable environment for online exams, focusing on user-friendliness and ease of integration.
 
 ---
 
 # ✨ Features
 
 ## 🎯 Core Video Conferencing Functionality
-- **Multi-User Rooms** – Create and join rooms with multiple participants using mesh topology  
-- **Video & Audio Conferencing** – High-quality, real-time video and audio communication via WebRTC  
-- **Screen Sharing** – Share your screen for presentations and collaboration  
-- **Chat Messaging** – Real-time group chat powered by Socket.IO  
-- **Media Controls** – Toggle microphone and camera on/off during meetings  
+- **Real-Time Video Monitoring** – Live video/audio streaming powered by WebRTC
+- **Behavioral Analysis with MediaPipe** – Detects face, eye movement, and suspicious activities
+- **AI-Powered Chatbot (Gemini API)** – Provides automated assistance and intelligent responses
+- **Recording & Reporting** – Stores session recordings with detailed AI analysis reports 
 
 ## 🤖 Advanced Features
-- **AI-Powered Chatbot** – Integrated Gemini API chatbot for fun and interactive conversations  
-- **Secure Authentication** – OAuth 2.0 & JWT-based login/register for user security  
-- **Room Management** – Unique room links and secure room joining  
-- **Real-Time Status** – Instant updates on participants joining/leaving  
-- **Multi-Device Support** – Works seamlessly across desktop and mobile  
+- **AI-Powered Analysis** – Integrated Gemini API for fun analysis of the mediapipe face detction data    
+- **Suspicious Activity Alerts** – Real-time notifications for abnormal movements or face absence 
 
 ## ⚙️ Technical Features
-- **MVC Architecture** – Clean and scalable backend with Express.js & Node.js  
-- **Responsive Design** – Modern, mobile-first UI built with React.js & CSS  
-- **RESTful APIs** – Well-structured APIs for authentication and data flow  
-- **Real-Time Communication** – WebRTC for media streaming + Socket.IO for signaling  
-- **Security First** – JWT authentication, OAuth 2.0 integration, input validation, and CORS protection  
-- **Production Ready** – Docker & Docker Compose support with deployment on Render  
+- **WebRTC Integration** – Real-time video/audio capturing of Candidate
+- **MediaPipe Models** – Face detection, posture analysis
+- **Gemini API** – Advanced natural language processing for AI chatbot and automated feedback
+- **Express.js + Node.js Backend** – RESTful API architecture with structured routing
+- **MongoDB Database** – Secure storage of logs, reports, and user details
+- **React.js Frontend** – Modern, responsive, and user-friendly UI
+- **CORS & Security** – Configured for safe cross-origin communication
+- **Cloud Deployment** – Hosted on Render for production scalability
 
 
 ## 🏗 Architecture
@@ -54,20 +48,14 @@ The platform follows a **client-server model** with **MVC architecture** on the 
                    ┌────────────────────────┐
                    │        Backend          │
                    │ Node.js + Express.js    │
-                   │ OAuth 2.0 + JWT         │
-                   │ MVC Pattern             │
+                   │ MVC Pattern  + MONGODB  │
                    └───────────┬────────────┘
                                │
                                ▼
                    ┌────────────────────────┐
                    │ Real-Time Engine        │
-                   │ WebRTC + Socket.IO      │
+                   │ WebRTC + MediaPipe     │
                    └───────────┬────────────┘
-                               │
-                               ▼
-                   ┌────────────────────────┐
-                   │   AI Chatbot (Gemini)   │
-                   └────────────────────────┘
 ```
 
 ---
@@ -86,7 +74,6 @@ The platform follows a **client-server model** with **MVC architecture** on the 
 - **React 18** – Modern JavaScript library with hooks  
 - **React Router v6** – Client-side routing for seamless navigation  
 - **Axios** – HTTP client for API communication  
-- **JWT Authentication** – Secure login/register system integration  
 - **CSS3** – Modern styling with Flexbox/Grid & fully responsive design  
 
 ## ⚙️ Backend Technologies
@@ -94,19 +81,17 @@ The platform follows a **client-server model** with **MVC architecture** on the 
 - **Express.js** – Fast, unopinionated web framework  
 - **MongoDB** – NoSQL document database for storing user data, rooms, and chat messages  
 - **Mongoose** – Elegant MongoDB object modeling for Node.js  
-- **OAuth 2.0 + JWT** – Secure authentication & authorization  
 - **MVC Architecture** – Clean, scalable backend structure  
 
-## 🌐 Real-Time Communication
-- **WebRTC** – Peer-to-peer audio/video streaming  
-- **Socket.IO** – Real-time signaling & chat messaging  
-- **Mesh Topology** – Efficient peer connections for multi-user rooms  
+## 🌐 Real-Time Media Capturing And Face Detection
+- **WebRTC** – Peer-to-peer audio/video streaming   
+- **MediaPipe (face detection)** – Efficient detecting the face movement and eye movement  
 
 ## 🤖 AI Integration
 - **Google Gemini API** – Advanced AI for:  
-  - Fun chatbot interactions during meetings  
-  - Contextual & engaging responses  
-  - Natural language understanding  
+  - Analysis of the proctoring data 
+  - Give result in detail and breif manner  
+  - Also Give score of proctoring from 100  
 
 ## ☁️ Cloud Services & DevOps
 - **Render** – Deployment platform for frontend & backend  
@@ -125,73 +110,50 @@ The platform follows a **client-server model** with **MVC architecture** on the 
 
 ```
 .
-├── CLIENT
-│   ├── eslint.config.js
-│   ├── index.html
+├── BACKEND
+│   ├── controllers
+│   │   ├── AiControllers.js
+│   │   └── logControllers.js
+│   ├── index.js
+│   ├── models
+│   │   └── logModels.js
 │   ├── package.json
-│   ├── public
-│   │   ├── image.jpg
-│   │   └── vite.svg
-│   ├── src
-│   │   ├── App.jsx
-│   │   ├── assets
-│   │   │   └── react.svg
-│   │   ├── index.css
-│   │   ├── main.jsx
-│   │   ├── pages
-│   │   │   ├── Authentication
-│   │   │   │   ├── Login.jsx
-│   │   │   │   └── Signup.jsx
-│   │   │   ├── CreateComponent.jsx
-│   │   │   ├── DashBoard
-│   │   │   │   ├── DashBoard.jsx
-│   │   │   │   └── SideBar.jsx
-│   │   │   ├── Home.jsx
-│   │   │   ├── Meeting.jsx
-│   │   │   └── VideoComponent.jsx
-│   │   └── styles
-│   │       ├── Authentication
-│   │       │   ├── Login.css
-│   │       │   └── Signup.css
-│   │       ├── Home.css
-│   │       ├── MeetingComponent.css
-│   │       └── VideoComponent.css
-│   ├── static.json
-│   └── vite.config.js
-└── SERVER
-    ├── Util
-    │   └── ScecretToken.js
-    ├── controllers
-    │   ├── AiController.js
-    │   ├── socketManger.js
-    │   └── userController.js
-    ├── index.js
-    ├── middlewares
-    │   └── Authmiddlewares.js
-    ├── models
-    │   └── userModel.js
+│   └── routes
+│       ├── aiRoutes.js
+│       └── logRoutes.js
+└── CLIENT
+    ├── eslint.config.js
+    ├── index.html
     ├── package.json
-    └── routes
-        ├── aiRoutes.js
-        └── userRoutes.js
+    ├── public
+    │   ├── models
+    │   │   └── blaze_face_short_range.tflite
+    │   └── vite.svg
+    ├── src
+    │   ├── assets
+    │   │   └── react.svg
+    │   ├── functions
+    │   │   ├── faceDetector.js
+    │   │   ├── getUserMedia.js
+    │   │   ├── pdfCreator.js
+    │   │   └── userMediaRecorder.js
+    │   ├── index.css
+    │   ├── main.jsx
+    │   ├── pages
+    │   │   ├── InterviewPage.jsx
+    │   │   └── LandingPage.jsx
+    │   └── styles
+    │       ├── InterviewPage.css
+    │       └── LandingPage.css
+    └── vite.config.js
 ```
 #📦 Key Dependencies
 ```bash
-@emotion/react: ^11.14.0
-@emotion/styled: ^11.14.0
-@mui/icons-material: ^7.1.0
-@mui/material: ^7.1.0
-@tailwindcss/vite: ^4.1.12
-axios: ^1.10.0
-dotenv: ^17.2.1
-js-cookie: ^3.0.5
-lucide-react: ^0.513.0
-react: ^19.1.0
-react-dom: ^19.1.0
-react-router-dom: ^7.6.2
-socket.io-client: ^4.8.1
-tailwindcss: ^4.1.12
-uuid: ^11.1.0
+@google/genai: ^1.20.0
+cors: ^2.8.5
+dotenv: ^17.2.2
+express: ^5.1.0
+mongoose: ^8.18.1
 ```
 ---
 
@@ -201,7 +163,6 @@ uuid: ^11.1.0
 - **Node.js 18+**  
 - **Docker & Docker Compose** (recommended)  
 - **MongoDB** (local installation or Atlas account)  
-- **Google Cloud Console** (for OAuth setup)  
 - **Google AI Studio account** (for Gemini API key)  
 
 ---
@@ -215,14 +176,13 @@ cd FULL-STACK-REAL-TIME-VIDEO-CONFERENCING-PLATFORM
 ```
 2️⃣ Set up environment variables
 ```bash
-Create .env file in server/:
+Create .env file in BACKEND/:
 
 GEMINI_API_KEY = <your gemini api key>
-TOKEN_KEY = <your token key>
 FRONTEND_URL = http://localhost:5173
 MONGO_URL = <your mongodb url>
 
-Create .env file in client/:
+Create .env file in CLIENT/:
 VITE_API_URL=http://localhost:3000
 ```
 
@@ -234,9 +194,9 @@ docker-compose up --build
 
 4️⃣ Access the application
 ```bash
-Frontend: http://localhost:5173
+Frontend : http://localhost:5173
 
-Backend API: http://localhost:3000
+Backend : http://localhost:3000
 ```
 ---
 
@@ -244,7 +204,7 @@ Backend API: http://localhost:3000
 Install dependencies
 ```bash
 # Backend dependencies
-cd SERVER
+cd BACKEND
 npm install
 
 # Frontend dependencies
@@ -307,7 +267,7 @@ This project is licensed under the **MIT License** – feel free to use and modi
 ## 💡 Future Improvements
 
 * 📼 Add **meeting recording & playback**
-* 📊 Add **analytics dashboard** for room stats
+* 📊 Add **analytics dashboard** for stats
 * 🌍 Implement **global STUN/TURN servers** for better connectivity
 * 📱 Add **mobile-friendly UI**
 
