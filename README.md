@@ -57,13 +57,6 @@ The platform follows a **client-server model** with **MVC architecture** on the 
 ```
 
 ---
-
-## 📸 Demo
-
-🎥 **Loom Video Walkthrough**: *\[Placeholder – Add your Loom link here]*
-
-🌐 **Live Demo**: [TalkSphere on Render](https://full-stack-real-time-video-conferencing-5r1k.onrender.com)
-
 ---
 
 # 🛠 Tech Stack & AI Tools
