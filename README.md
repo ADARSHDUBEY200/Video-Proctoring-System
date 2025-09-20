@@ -163,7 +163,7 @@ mongoose: ^8.18.1
 1️⃣ Clone the repository  
 ```bash
 git clone <your-repo-url>
-cd FULL-STACK-REAL-TIME-VIDEO-CONFERENCING-PLATFORM
+cd Video-Proctoring-System
 ```
 2️⃣ Set up environment variables
 ```bash
