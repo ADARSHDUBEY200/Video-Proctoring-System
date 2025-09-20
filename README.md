@@ -1,7 +1,5 @@
 # 📹 Full Stack Video Proctoring System
 
-[![Website](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge\&logo=vercel)](https://video-proctoring-system-bisd.onrender.com)
-
 ---
 
 ## 🚀 Overview
